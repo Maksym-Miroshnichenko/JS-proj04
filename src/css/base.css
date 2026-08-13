@@ -66,17 +66,8 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-width: 100vw;
+	min-width: 100vw;
   min-height: 100vh;
   margin: 0;
 }
 
-main {
-  display: flex;
-	flex-direction: column;
-}
-main:has(.back-link) {
-  text-align: center;
-}
