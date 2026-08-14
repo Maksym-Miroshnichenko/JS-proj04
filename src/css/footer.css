@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.footer-container {
+  padding: 40px 64px;
+}
+
 .footer {
   background-color: #9ff1ef;
 }
@@ -64,7 +68,6 @@
   line-height: 1.5;
   color: #080c0c;
 
-  padding-bottom: 48px;
   margin: 0 auto;
   width: 339px;
 }
