@@ -1,0 +1,155 @@
+/* Контейнер секції відгуків */
+.feedback-section {
+    background-color: #f5fdfd;
+    text-align: center;
+}
+
+.feedback-title {
+    margin-bottom: 24px;
+    font-weight: 700;
+        font-size: 36px;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        text-align: center;
+        color: #080c0c;
+}
+
+.feedback-title::first-letter {
+    text-transform: uppercase;
+}
+
+.feedback-subtitle {
+    margin-bottom: 40px;
+    font-size: 18px;
+        line-height: 1.5;
+        text-align: center;
+        color: #080c0c;
+}
+
+.feedback-swiper {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+
+/* Картка відгуку (Округла чорна рамка) */
+.feedback-card {
+    background: #ffffff;
+    border: 2px solid #111111;
+    border-radius: 20px;
+    padding: 24px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+/* Чорні зірочки рейтингу за макетом */
+.rating-stars {
+    display: inline-block;
+    font-size: 20px;
+    font-family: Times, serif;
+    margin-bottom: 16px;
+    /* Градієнт фарбує заповнені зірочки в чорний колір, а порожні в сірий */
+    background: linear-gradient(90deg, #111111 var(--rating-percent), #e0e0e0 var(--rating-percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rating-stars::before {
+    content: '★★★★★';
+    letter-spacing: 2px;
+}
+
+/* Текст відгуку всередині картки */
+.feedback-text {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #111111;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+/* Ім'я користувача */
+.feedback-user {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111111;
+}
+
+/* Нижня панель керування: пагінація ліворуч, кнопки праворуч */
+.controls-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Крапки пагінації Swiper */
+.feedback-pagination {
+    position: static !important;
+    display: flex;
+    gap: 9px;
+    width: auto !important;
+}
+
+.feedback-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: #ccd0cc;
+    opacity: 1;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-pagination .swiper-pagination-bullet-active {
+    background-color: #111111 !important;
+    /* Активна крапка стає чорною */
+}
+
+/* Блок для кнопок-стрілочок */
+.nav-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+/* Круглі кнопки зі стрілочками */
+.swiper-btn {
+    position: static !important;
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid #111111;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.swiper-btn:hover {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.swiper-btn-prev::after,
+.swiper-btn-next::after {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.swiper-btn-prev::after {
+    content: '←';
+}
+
+.swiper-btn-next::after {
+    content: '→';
+}
+
+/* Стан, коли далі гортати не можна (неактивна кнопка) */
+.swiper-button-disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
