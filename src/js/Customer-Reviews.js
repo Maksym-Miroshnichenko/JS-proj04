@@ -22,7 +22,7 @@ function initSwiper() {
       clickable: true,
     },
     breakpoints: {
-      768: { slidesPerView: 2, spaceBetween: 24 },
+      768: { slidesPerView: 3, spaceBetween: 24 },
       1440: { slidesPerView: 3, spaceBetween: 32 }
     }
   });
