@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sources":[],"sourcesContent":[],"names":[],"mappings":""}
+{"version":3,"file":"index.js","sources":["../src/js/FAQ.js"],"sourcesContent":["import Accordion from 'accordion-js';\n\nconst faqAccordion = document.querySelector('.js-faq-accordion');\n\nif (faqAccordion) {\n  new Accordion(faqAccordion, {\n    duration: 300,\n    collapse: true,\n    showMultiple: false,\n  });\n}\n"],"names":["faqAccordion","Accordion"],"mappings":"svBAEA,MAAMA,EAAe,SAAS,cAAc,mBAAmB,EAE3DA,GACF,IAAIC,EAAUD,EAAc,CAC1B,SAAU,IACV,SAAU,GACV,aAAc,EAClB,CAAG"}
