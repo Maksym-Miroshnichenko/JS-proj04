@@ -4,9 +4,8 @@ import 'swiper/css/bundle';
 const API_URL = 'https://deserts-store.b.goit.study/api/feedbacks?limit=10&page=1';
 let swiperInstance = null;
 
-// Функція безпечної ініціалізації слайдера
 function initSwiper() {
-  if (swiperInstance) return; // Якщо вже ініціалізовано, не дублюємо
+  if (swiperInstance) return; 
 
   swiperInstance = new Swiper('.feedback-swiper', {
     slidesPerView: 1,
@@ -15,7 +14,7 @@ function initSwiper() {
     observer: true,
     observeParents: true,
     navigation: {
-      prevEl: '.swiper-btn-prev', // Стрілочки за вашим HTML макетом
+      prevEl: '.swiper-btn-prev', 
       nextEl: '.swiper-btn-next',
     },
     pagination: {
@@ -29,11 +28,9 @@ function initSwiper() {
   });
 }
 
-// Запит даних із сервера Sweet Shop
 async function fetchFeedbacks() {
   const container = document.getElementById('feedback-container');
   
-  // Якщо Vite ще не встиг відрендерити HTML, чекаємо 100мс і пробуємо знову
   if (!container) {
     setTimeout(fetchFeedbacks, 100);
     return;
@@ -46,7 +43,6 @@ async function fetchFeedbacks() {
     const data = await response.json();
     console.log('Дані успішно отримано з сервера Sweet Shop:', data);
 
-    // Універсальний парсинг масиву на випадок будь-якого формату GoIT API
     const feedbacks = Array.isArray(data) 
   ? data 
   : (data.feedbacks || data.results || data.data || []);
@@ -63,9 +59,8 @@ async function fetchFeedbacks() {
   }
 }
 
-// Генерація HTML-карток
 function renderFeedbacks(feedbacks, container) {
-  container.innerHTML = ''; // Прибираємо плейсхолдер завантаження
+  container.innerHTML = ''; 
 
   feedbacks.forEach(item => {
     const ratingPercent = ((item.rating || 5) / 5) * 100;
@@ -84,11 +79,9 @@ function renderFeedbacks(feedbacks, container) {
     container.insertAdjacentHTML('beforeend', slideHTML);
   });
 
-  // Вмикаємо Swiper тільки після того, як картки фізично з'явилися в HTML
   initSwiper();
 }
 
-// Запускаємо логіку після повного завантаження сторінки
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', fetchFeedbacks);
 } else {
