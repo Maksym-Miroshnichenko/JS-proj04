@@ -5,5 +5,5 @@ import {} from './js/About-Us.js';
 import {} from './js/Customer-Reviews.js';
 import './js/FAQ.js';
 import {} from './js/Navbar.js';
-import { initContactForm } from "./js/contact-form.js";
+import { initContactForm } from "./js/Contact-Modal.js";
 initContactForm();
