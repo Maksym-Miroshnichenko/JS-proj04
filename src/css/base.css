@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 :root {
 	--color-scheme-1-background: var(--color-ice-cold-lightest);
 	--color-neutral-darkest: #080c0c;
@@ -71,3 +75,76 @@ body {
   margin: 0;
 }
 
+.button-primary{
+font-family: var(--font-family);
+font-weight: 500;
+line-height: 150%;
+color: var(--color-neutral-darkest);
+border: 1px solid var(--color-wewak);
+border-radius: 100px;
+padding: 10px 24px;
+background: var(--color-wewak);
+}
+
+.button-primary:hover, .button-primary:focus{
+	background: var(--color-scheme-1-background);
+	border: 2px solid var(--color-neutral-darkest);
+}
+
+.button-primary:active{
+	border: 2px solid var(--color-neutral-darkest);
+	background: var(--color-wewak-light);
+}
+
+.button-primary:disabled{
+	border: 1px solid var(--color-wewak);
+	background: var(--color-wewak);
+opacity: 0.3;
+pointer-events: none;
+}
+
+.button-secondary{
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+color: var(--color-neutral-darkest);
+border: 2px solid var(--color-neutral-darkest);
+border-radius: 100px;
+padding: 10px 24px;
+background: var(--color-scheme-1-background);
+}
+
+.button-secondary:hover, .button-secondary:focus{
+	background: var(--color-wewak);
+}
+
+.button-secondary:active{
+	background: var(--color-wewak-dark);
+}
+
+.button-secondary:disabled{
+	pointer-events: none;
+	opacity: 0.3;
+}
+
+.link{
+	font-family: var(--font-family);
+font-weight: 500;
+line-height: 150%;
+color: var(--color-neutral-darkest);
+}
+
+.link:hover, link:fokus{
+	text-decoration: underline;
+}
+
+.link:active{
+text-decoration: underline;
+text-decoration-skip-ink: none;
+color: var(--color-wewak);
+}
+
+.link:disabled{
+	pointer-events: none;
+}
