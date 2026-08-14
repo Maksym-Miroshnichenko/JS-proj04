@@ -1,3 +1,5 @@
+export function initContactForm(){ 
+
 const formData = {
   name: "",
   phone: "",
@@ -53,4 +55,5 @@ inputs.forEach(input => {
       input.classList.remove("is-touched");
     }
   });
-});
+})
+}
