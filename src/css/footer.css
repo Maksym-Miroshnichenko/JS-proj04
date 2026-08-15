@@ -5,6 +5,8 @@
 }
 
 .footer-container {
+  margin: 0 auto;
+  max-width: 1312px;
   padding: 40px 64px;
 }
 
@@ -37,8 +39,14 @@
   color: #080c0c;
 }
 
-.social-link {
-  fill: #080c0c;
+.footer-nav-link:hover,
+.footer-nav-link:focus {
+  border-bottom: 1px solid #080c0c;
+}
+
+.footer-nav-link:active {
+  text-decoration: underline;
+  color: #f19898;
 }
 
 .footer-icon-list {
@@ -106,5 +114,10 @@
 
   .footer-icon-list {
     margin-bottom: 0;
+  }
+
+  .social-links {
+    width: 24px;
+    height: 24px;
   }
 }
