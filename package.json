@@ -1,11 +1,11 @@
 {
-  "name": "vanilla-app-template",
+  "name": "JS-proj4",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/goit-js-proj04/",
+    "build": "vite build --base=/JS-proj4/",
     "preview": "vite preview"
   },
   "devDependencies": {
