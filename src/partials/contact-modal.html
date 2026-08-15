@@ -1,0 +1,39 @@
+<div class="backdrop">
+    <div class="modal-contact-form" >
+      <form class="contact-form">
+         <div class="container-contact-form">
+      <button class="close-btn">
+        <svg class="icon-close-btn" width="24" height="24">
+          <use href="/img/symbol-defs.svg#icon-close"></use>
+        </svg>
+      </button>
+        <h2 class="contact-form-title">Офомлення замовлення</h2>
+        <label class="label-input"
+          >Ім'я*
+          <div class="input-wrapper">
+              <input class="modal-input" type="text" name="name"
+              placeholder="Вікторія"
+              required>
+          <p class="error-text">Будь ласка, введіть дійсне ім'я.</p>
+          </div>
+        </label>
+        <label class="label-input"
+          >Телефон*
+         <div class="input-wrapper">
+              <input class="modal-input" type="tel" name="phone"
+              placeholder="38 0__ ______"
+              pattern="^(\+?38)?0[0-9]{9}$"
+              required>
+              <p class="error-text">Будь ласка, введіть дійсний номер телефону.</p>
+         </div>
+        </label>
+        <label class="label-input">Коментар*
+          <textarea class="comment-form" 
+          name="message"
+          maxlength="500"
+          placeholder="Ваш коментар"></textarea>
+        </label>
+        <button class="button-primary submit-btn" type="submit">Надіслати заявку</button>
+      </form>
+    </div>
+</div>
