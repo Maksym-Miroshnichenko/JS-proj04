@@ -88,7 +88,6 @@
 .feedback-pagination {
     position: static !important;
     display: flex;
-    gap: 9px;
     width: auto !important;
 }
 
