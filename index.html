@@ -1,17 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/JS-proj04/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sweet Shop</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400..600;1,400..600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400..600;1,400..600&display=swap"
+      rel="stylesheet"
+    />
     <script type="module" crossorigin src="/JS-proj04/index.js"></script>
     <link rel="modulepreload" crossorigin href="/JS-proj04/assets/vendor-BSq3Nu46.js">
-    <link rel="stylesheet" crossorigin href="/JS-proj04/assets/index-PKoSXdZj.css">
+    <link rel="stylesheet" crossorigin href="/JS-proj04/assets/index-B_IA57vB.css">
   </head>
   <body>
     header
@@ -196,6 +202,45 @@
         </div>
     </div>
 </section>
+      <div class="backdrop">
+    <div class="modal-contact-form" >
+      <form class="contact-form">
+         <div class="container-contact-form">
+      <button class="close-btn">
+        <svg class="icon-close-btn" width="24" height="24">
+          <use href="/JS-proj04/assets/symbol-defs-B_TgRvN-.svg#icon-close"></use>
+        </svg>
+      </button>
+        <h2 class="contact-form-title">Офомлення замовлення</h2>
+        <label class="label-input"
+          >Ім'я*
+          <div class="input-wrapper">
+              <input class="modal-input" type="text" name="name"
+              placeholder="Вікторія"
+              required>
+          <p class="error-text">Будь ласка, введіть дійсне ім'я.</p>
+          </div>
+        </label>
+        <label class="label-input"
+          >Телефон*
+         <div class="input-wrapper">
+              <input class="modal-input" type="tel" name="phone"
+              placeholder="38 0__ ______"
+              pattern="^(\+?38)?0[0-9]{9}$"
+              required>
+              <p class="error-text">Будь ласка, введіть дійсний номер телефону.</p>
+         </div>
+        </label>
+        <label class="label-input">Коментар*
+          <textarea class="comment-form" 
+          name="message"
+          maxlength="500"
+          placeholder="Ваш коментар"></textarea>
+        </label>
+        <button class="button-primary submit-btn" type="submit">Надіслати заявку</button>
+      </form>
+    </div>
+</div>
     </main>
 
     <section id="footer" class="footer">
