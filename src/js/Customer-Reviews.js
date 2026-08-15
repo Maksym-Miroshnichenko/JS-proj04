@@ -41,8 +41,6 @@ async function fetchFeedbacks() {
     if (!response.ok) throw new Error('Помилка сервера');
 
     const data = await response.json();
-    console.log('Дані успішно отримано з сервера Sweet Shop:', data);
-
     const feedbacks = Array.isArray(data) 
   ? data 
   : (data.feedbacks || data.results || data.data || []);

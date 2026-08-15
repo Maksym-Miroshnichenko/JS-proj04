@@ -7,11 +7,11 @@
     font-family: "Comfortaa", sans-serif;
     margin-bottom: 24px;
     font-weight: 700;
-        font-size: 36px;
-        line-height: 1.2;
-        letter-spacing: -0.01em;
-        text-align: center;
-        color: #080c0c;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #080c0c;
 }
 
 .feedback-title::first-letter {
@@ -22,9 +22,9 @@
     font-family: "Work Sans", sans-serif;
     margin-bottom: 40px;
     font-size: 18px;
-        line-height: 1.5;
-        text-align: center;
-        color: #080c0c;
+    line-height: 1.5;
+    text-align: center;
+    color: #080c0c;
 }
 
 .feedback-swiper {
@@ -121,8 +121,7 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.swiper-btn:hover,
-.swiper-btn:focus{
+.swiper-btn:hover{
     background-color: #f19898;
     color: #080c0c;
 }
