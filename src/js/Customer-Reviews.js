@@ -58,27 +58,33 @@ async function fetchFeedbacks() {
 }
 
 function renderFeedbacks(feedbacks, container) {
-  container.innerHTML = ''; 
+  container.innerHTML = '';
 
   feedbacks.forEach(item => {
-    const ratingPercent = ((item.rating || 5) / 5) * 100;
+    const ratingPercent = ((item.rate || 5) / 5) * 100;
 
     const slideHTML = `
       <div class="swiper-slide">
         <div class="feedback-card">
           <div class="card-top-content">
-            <div class="rating-stars" style="--rating-percent: ${ratingPercent}%" title="Рейтинг: ${item.rating}"></div>
-            <p class="feedback-text">"${item.comment || item.text || 'Чудовий десерт!'}"</p>
+            <div class="rating-stars" style="--rating-percent: ${ratingPercent}%" title="Рейтинг: ${item.rate || 5}"></div>
+            
+            <!-- 2. Використовуємо item.description замість item.comment / item.text -->
+            <p class="feedback-text">${item.description || 'Чудовий десерт!'}</p>
           </div>
-          <p class="feedback-user">${item.name || 'Анонімний клієнт'}</p>
+          
+          <!-- 3. Використовуємо item.author замість item.name -->
+          <p class="feedback-user">${item.author || 'Анонімний клієнт'}</p>
         </div>
       </div>
     `;
+
     container.insertAdjacentHTML('beforeend', slideHTML);
   });
 
   initSwiper();
 }
+
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', fetchFeedbacks);
