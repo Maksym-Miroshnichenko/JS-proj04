@@ -107,4 +107,11 @@
   .footer-icon-list {
     margin-bottom: 0;
   }
+
+  .footer-container {
+    max-width: 1312px;
+    margin: 0 auto;
+  }
 }
+
+
