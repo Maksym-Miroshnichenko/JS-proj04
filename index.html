@@ -16,8 +16,9 @@
       rel="stylesheet"
     />
     <script type="module" crossorigin src="/JS-proj04/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/JS-proj04/assets/vendor-BSq3Nu46.js">
-    <link rel="stylesheet" crossorigin href="/JS-proj04/assets/index-DgUE-6sT.css">
+    <link rel="modulepreload" crossorigin href="/JS-proj04/assets/vendor-CAbnLzZU.js">
+    <link rel="stylesheet" crossorigin href="/JS-proj04/assets/vendor-f2fnZX2x.css">
+    <link rel="stylesheet" crossorigin href="/JS-proj04/assets/index-DgpYm7Dw.css">
   </head>
   <body>
     header
@@ -33,9 +34,25 @@
       product
       about-us
 <!-- https://swiperjs.com/demos -->
-      reviews
-<!-- https://swiperjs.com/demos -->
-<!--  -->
+      <section class="feedback-section" id="reviews">
+  <div class="container">
+    <h2 class="feedback-title">Відгуки клієнтів</h2>
+    <p class="feedback-subtitle">
+      Найкращі десерти, які я коли-небудь куштував!
+    </p>
+    <div class="swiper feedback-swiper">
+      <div class="swiper-wrapper" id="feedback-container"></div>
+    </div>
+    <div class="controls-wrapper">
+      <div class="swiper-pagination feedback-pagination"></div>
+      <div class="nav-buttons">
+        <button class="swiper-btn swiper-btn-prev" aria-label="Назад"></button>
+        <button class="swiper-btn swiper-btn-next" aria-label="Вперед"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
       <section class="faq-section" id="faq">
     <div class="container faq-container">
         <div class="faq-content">
