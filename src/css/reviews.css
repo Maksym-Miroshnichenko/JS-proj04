@@ -50,6 +50,7 @@
     font-family: Times, serif;
     margin-bottom: 24px;
     background: linear-gradient(90deg, #111111 var(--rating-percent), #e0e0e0 var(--rating-percent));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -70,7 +71,6 @@
 .feedback-user {
     font-family: "Work Sans", sans-serif;
     font-weight: 600;
-    margin-top: 24px;
     font-size: 16px;
     line-height: 1.5;
     color: #080c0c;
@@ -208,4 +208,27 @@
     overflow: visible !important;
     }
          
+}
+
+
+@media screen and (min-width: 1440px) {
+.nav-buttons .swiper-btn-prev {
+    left: 40px !important;
+    }
+    
+.nav-buttons .swiper-btn-next {
+    right: 40px !important;
+    }
+
+.feedback-subtitle{
+    margin-bottom: 80px;
+    }
+
+.feedback-card{
+    padding: 32px;
+}
+
+.nav-buttons .swiper-btn{
+    top: 65% !important;
+}
 }
