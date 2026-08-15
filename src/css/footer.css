@@ -7,7 +7,7 @@
 .footer-container {
   margin: 0 auto;
   max-width: 1312px;
-  padding: 40px 64px;
+  padding: 48px 20px;
 }
 
 .footer {
@@ -15,8 +15,10 @@
 }
 
 .logo-icon {
-  margin-bottom: 32px;
-  fill: #080c0c;
+  display: block;
+  width: 100%;
+  max-width: 309px;
+  height: auto;
 }
 
 .footer-nav {
@@ -60,6 +62,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .hr-footer {
@@ -77,16 +80,25 @@
   color: #080c0c;
 
   margin: 0 auto;
-  width: 339px;
+  max-width: 339px;
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {
+  .footer-container {
+    padding: 48px 32px;
+  }
+
   .footer-nav-list {
     flex-direction: row;
   }
 }
 
 @media screen and (min-width: 1440px) {
+  .footer-container {
+    padding: 40px 64px;
+  }
+
   .footer-inner {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
