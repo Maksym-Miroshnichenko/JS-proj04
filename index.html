@@ -16,9 +16,9 @@
       rel="stylesheet"
     />
     <script type="module" crossorigin src="/JS-proj04/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/JS-proj04/assets/vendor-CAbnLzZU.js">
-    <link rel="stylesheet" crossorigin href="/JS-proj04/assets/vendor-f2fnZX2x.css">
-    <link rel="stylesheet" crossorigin href="/JS-proj04/assets/index-cpufDpcT.css">
+    <link rel="modulepreload" crossorigin href="/JS-proj04/assets/vendor-B3Lvlce5.js">
+    <link rel="stylesheet" crossorigin href="/JS-proj04/assets/vendor-B6MSKusw.css">
+    <link rel="stylesheet" crossorigin href="/JS-proj04/assets/index-B9nt4yBH.css">
   </head>
   <body>
     header
@@ -229,41 +229,43 @@
     <div class="modal-contact-form" >
       <form class="contact-form">
          <div class="container-contact-form">
-      <button class="close-btn">
+      <button type="button" class="close-btn">
         <svg class="icon-close-btn" width="24" height="24">
           <use href="/JS-proj04/assets/symbol-defs-B_TgRvN-.svg#icon-close"></use>
         </svg>
       </button>
         <h2 class="contact-form-title">Офомлення замовлення</h2>
-        <label class="label-input"
-          >Ім'я*
+        <label class="label-input" for="name">Ім'я*</label>
           <div class="input-wrapper">
               <input class="modal-input" type="text" name="name"
+              id="name"
               placeholder="Вікторія"
               required>
           <p class="error-text">Будь ласка, введіть дійсне ім'я.</p>
-          </div>
-        </label>
-        <label class="label-input"
-          >Телефон*
-         <div class="input-wrapper">
+    </div>
+        
+        <label class="label-input" for="phone">Телефон*</label>
+          <div class="input-wrapper">
               <input class="modal-input" type="tel" name="phone"
+              id="phone"
               placeholder="38 0__ ______"
               pattern="^(\+?38)?0[0-9]{9}$"
               required>
               <p class="error-text">Будь ласка, введіть дійсний номер телефону.</p>
-         </div>
-        </label>
-        <label class="label-input">Коментар*
-          <textarea class="comment-form" 
+        </div>
+        <label class="label-input" for="message">Коментар*</label>
+          <textarea class="comment-form modal-input" 
+          id="message"
+          required
           name="message"
           maxlength="500"
           placeholder="Ваш коментар"></textarea>
-        </label>
         <button class="button-primary submit-btn" type="submit">Надіслати заявку</button>
+         </div>
       </form>
     </div>
 </div>
+
     </main>
 
     <footer id="footer" class="footer">
