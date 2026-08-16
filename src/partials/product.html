@@ -1,70 +1,97 @@
-<section class="spl-section-products-list">
+<section id="sweets" class="spl-section-products-list">
   <div class="spl-heading-cover">
     <hgroup class="spl-hgroup">
-      <ul class="listOfInfoElements">
-        <li>
-          <h2 class="spl-hgroup-h2">Солодощі</h2>
-        </li>
-        <li>
-          <p class="spl-hgroup-p">
-            Спробуйте наші смачні десерти, які вас здивують!
-          </p>
-        </li>
-      </ul>
+      <h2 class="spl-hgroup-h2">Солодощі</h2>
+      <p class="spl-hgroup-p">
+        Спробуйте наші смачні десерти, які вас здивують!
+      </p>
     </hgroup>
     <form>
       <div class="coverOfSelect">
-        <select name="category" class="spl-list-select">
-          <option>Всі десерти</option>
-          <option>Італійські десерти</option>
-          <option>Гарячі десерти</option>
-          <option>Заварні тістечка</option>
-          <option>Класичні торти</option>
-          <option>Легкі десерти</option>
-          <option>Незвичайні десерти</option>
-          <option>Французькі тістечка</option>
-          <option>Фруктові десерти</option>
-          <option>Холодні десерти</option>
-          <option>Шоколадні випічки</option>
-        </select>
+  <div class="dropdown">
+    <button class="dropdown__toggle" type="button">
+    <span class="dropdown__label">Selection</span>
+    <svg class="dropdown__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none">
+    <use href="../img/section deserts-list/svg/Vector.svg">
+    </svg>
+  </button>
+
+  <ul class="dropdown__list">
+    <!-- <li class="dropdown__item">Всі десерти</li>
+    <li class="dropdown__item">Італійські десерти</li>
+    <li class="dropdown__item">Гарячі десерти</li>
+    <li class="dropdown__item">Заварні тістечка</li>
+    <li class="dropdown__item">Класичні торти</li>
+    <li class="dropdown__item">Легкі десерти</li>
+    <li class="dropdown__item">Незвичайні десерти</li>
+    <li class="dropdown__item">Французькі тістечка</li> -->
+  </ul>
+  </div>
         <div class="coverOfInputs">
-          <button class="button-secondary" name="Всі десерти">
+          <!-- <button class="button-secondary spl-list-button" name="Всі десерти">
             Всі десерти
           </button>
-          <button class="button-secondary" name="Італійські десерти">
+          <button
+            class="button-secondary spl-list-button"
+            name="Італійські десерти"
+          >
             Італійські десерти
           </button>
-          <button class="button-secondary" name="Гарячі десерти">
+          <button
+            class="button-secondary spl-list-button"
+            name="Гарячі десерти"
+          >
             Гарячі десерти
           </button>
-          <button class="button-secondary" name="Заварні тістечка">
+          <button
+            class="button-secondary spl-list-button"
+            name="Заварні тістечка"
+          >
             Заварні тістечка
           </button>
-          <button class="button-secondary" name="Класичні торти">
+          <button
+            class="button-secondary spl-list-button"
+            name="Класичні торти"
+          >
             Класичні торти
           </button>
-          <button class="button-secondary" name="Легкі десерти">
+          <button class="button-secondary spl-list-button" name="Легкі десерти">
             Легкі десерти
           </button>
-          <button class="button-secondary" name="Незвичні десерти">
+          <button
+            class="button-secondary spl-list-button"
+            name="Незвичні десерти"
+          >
             Незвичні десерти
           </button>
-          <button class="button-secondary" name="Французькі тістечка">
+          <button
+            class="button-secondary spl-list-button"
+            name="Французькі тістечка"
+          >
             Французькі тістечка
           </button>
-          <button class="button-secondary" name="Фруктові десерти">
+          <button
+            class="button-secondary spl-list-button"
+            name="Фруктові десерти"
+          >
             Фруктові десерти
           </button>
-          <button class="button-secondary" name="Холодні десерти">
+          <button
+            class="button-secondary spl-list-button"
+            name="Холодні десерти"
+          >
             Холодні десерти
           </button>
-          <button class="button-secondary" name="Шоколадні випічки">
+          <button
+            class="button-secondary spl-list-button"
+            name="Шоколадні випічки"
+          >
             Шоколадні випічки
-          </button>
+          </button> -->
         </div>
       </div>
     </form>
   </div>
   <ul class="spl-deserts-list"></ul>
-  <button class="button-primary">Завантажити ще</button>
+  <button class="button-primary spl-button-load-more">Завантажити ще</button>
 </section>
