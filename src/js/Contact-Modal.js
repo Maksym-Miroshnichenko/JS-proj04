@@ -112,4 +112,3 @@ function closeModal(){
   document.body.classList.remove("modal-open");
 }
 }
-
