@@ -1,12 +1,18 @@
-const menuLinks = document.querySelectorAll(".menu-set");
+const logo = document.querySelector(".js-logo")
+const navMenuLinks = document.querySelectorAll(".js-menu-set");
 
-menuLinks.addEventListener("click", (event) => {
-    if (link.classList.contains("disabled")) {
+navMenuLinks.forEach(link => {
+    link.addEventListener("click", (event) => {
         event.preventDefault();
-        return;
-    }
 
-    menuLinks.forEach(item => item.classList.remove("current"));
+        if (link.classList.contains("disabled")) {
+            event.preventDefault();
+            return;
+        }
 
-    link.classList.add("current");
-});
+        navMenuLinks.forEach(item => item.classList.remove("current"));
+
+        link.classList.add("current");
+    });
+
+})
