@@ -1,3 +1,7 @@
+body.modal-open {
+  overflow: hidden;
+}
+
 .backdrop{
     position: fixed;
     inset: 0;
@@ -30,9 +34,8 @@
 }
 
 .modal-contact-form{
+min-height: 100vh;
 display: flex;
-position: fixed;
-inset: 0;
 justify-content: center;
 align-items: center;
 }
@@ -101,7 +104,7 @@ border-radius: 12px;
     background: var(--opacity-transparent);
 }
 
-input-wrap {
+.input-wrapper {
   position: relative;
 }
 

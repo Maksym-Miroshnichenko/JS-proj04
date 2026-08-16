@@ -2,7 +2,7 @@
     <div class="modal-contact-form" >
       <form class="contact-form">
          <div class="container-contact-form">
-      <button class="close-btn">
+      <button type="button" class="close-btn">
         <svg class="icon-close-btn" width="24" height="24">
           <use href="/img/symbol-defs.svg#icon-close"></use>
         </svg>
@@ -29,11 +29,13 @@
         </label>
         <label class="label-input">Коментар*
           <textarea class="comment-form" 
+          required
           name="message"
           maxlength="500"
           placeholder="Ваш коментар"></textarea>
         </label>
         <button class="button-primary submit-btn" type="submit">Надіслати заявку</button>
+         </div>
       </form>
     </div>
 </div>
