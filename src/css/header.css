@@ -4,6 +4,7 @@
   background-color: #f5fdfd;
 }
 /*sticky-header*/
+/*
 .side-header {
   position: sticky;
   top: 0;
@@ -12,6 +13,7 @@
   z-index: 1000;
   background-color: #f5fdfd;
 }
+*/
 
 .header-container {
   display: flex;
@@ -22,7 +24,6 @@
   width: 100%;
   height: 72px;
 
-  padding: 0px 20px;
   box-sizing: border-box;
 
   position: relative;
@@ -266,7 +267,7 @@ body.menu-open {
     cursor: not-allowed;
   }*/
 
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .header-container {
     justify-content: space-between;
     flex-direction: row;
@@ -309,10 +310,12 @@ body.menu-open {
     width: 133px;
   }
 }
-@media screen and (min-width: 1440px) {
+@media only screen and (min-width: 1440px) {
   .header-container {
     display: flex;
     align-items: center;
+
+    max-width: 100%;
   }
   .header-nav {
     gap: 32px;
