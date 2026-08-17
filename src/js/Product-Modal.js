@@ -120,4 +120,3 @@ document.addEventListener('click', e => {
   const id = link.dataset.id;
   openDessertModal(id);
 });
-
