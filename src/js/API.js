@@ -7,8 +7,6 @@ async function getItemsByQuery(page) {
   return response.data.desserts;
 }
 
-getItemsByQuery(1)
-
 async function getSortItemsByQuery(page, category) {
   const response = await axios.get(
     `https://deserts-store.b.goit.study/api/desserts?page=${page}&limit=8&category=${category}`
@@ -16,4 +14,4 @@ async function getSortItemsByQuery(page, category) {
   return response.data.desserts;
 }
 
-export { getItemsByQuery, getSortItemsByQuery};
+export { getItemsByQuery, getSortItemsByQuery };
