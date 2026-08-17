@@ -1,5 +1,5 @@
 /*logo => home*/
-document.addEventListener("DOMContentLoaded", () => {
+/*document.addEventListener("DOMContentLoaded", () => {
     const logoLink = document.getElementById("logo-link");
 
     if (logoLink) {
@@ -13,11 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     top: 0,
                     behavior: "smooth"
                 });
-
                 navMenuLinks.forEach(item => item.classList.remove("current"));
             }
         });
     }
+});*/
+
+const logoLink = document.querySelector('#logo-link');
+
+logoLink.addEventListener('click', () => {
+    /*event.preventDefault();*/
+    navMenuLinks.forEach(item => item.classList.remove('current'));
+    closeNavbar();
 });
 
 /*link click scroll*/

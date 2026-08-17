@@ -273,7 +273,7 @@ body.menu-open {
     flex-direction: row;
     gap: 32px;
 
-    max-width: 100%;
+    width: 100%;
   }
 
   .menu-burger-btn {
@@ -315,7 +315,7 @@ body.menu-open {
     display: flex;
     align-items: center;
 
-    max-width: 100%;
+    width: 100%;
   }
   .header-nav {
     gap: 32px;
