@@ -61,12 +61,12 @@
 
 .js-raty-stars .star-on-png::before {
     content: '★';
-    color: #111111;
+    fill: #080c0c;
 }
 
 .js-raty-stars .star-off-png::before {
     content: '★';
-    color: #e0e0e0;
+    fill: #080c0c;
 }
 
 .js-raty-stars .star-half-png::before {
