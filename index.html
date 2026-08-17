@@ -1,40 +1,62 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/JS-proj04/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sweet Shop</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400..600;1,400..600&display=swap"
-      rel="stylesheet"
-    />
-    <script type="module" crossorigin src="/JS-proj04/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/JS-proj04/assets/vendor-D7yrdv4P.js">
-    <link rel="stylesheet" crossorigin href="/JS-proj04/assets/vendor-B6MSKusw.css">
-    <link rel="stylesheet" crossorigin href="/JS-proj04/assets/index-a1We5CxU.css">
-  </head>
-  <body>
-    header
 
-    <main>
-      <section class="hero" >
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/JS-proj04/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sweet Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400..600;1,400..600&display=swap"
+    rel="stylesheet" />
+  <script type="module" crossorigin src="/JS-proj04/index.js"></script>
+  <link rel="modulepreload" crossorigin href="/JS-proj04/assets/vendor-D7yrdv4P.js">
+  <link rel="stylesheet" crossorigin href="/JS-proj04/assets/vendor-B6MSKusw.css">
+  <link rel="stylesheet" crossorigin href="/JS-proj04/assets/index-B2quqZ-W.css">
+</head>
+
+<body>
+  <section id="header" class="header side-header">
+    <div class="container header-container">
+        <a href="./" id="logo-link" class="logo-header" aria-label="Home">
+            <svg class="logo-icon-header" width="158" height="72">
+                <use href="../img/symbol-defs.svg#icon-logo"></use>
+            </svg>
+        </a>
+        <nav class="header-nav">
+            <ul class="menu">
+                <li><a href="#sweets" class="menu-set js-menu-set">Солодощі</a></li>
+                <li><a href="#about" class="menu-set js-menu-set">Про нас</a></li>
+                <li><a href="#reviews" class="menu-set js-menu-set">Відгуки</a></li>
+                <li><a href="#faq" class="menu-set js-menu-set">Часті питання</a></li>
+            </ul>
+            <button type="button" class="header-btn button-primary">До покупок</button>
+        </nav>
+        <button type="button" class="menu-burger-btn" aria-label="Open menu">
+            <svg class="icon-menu" width="24" height="24">
+                <use href="../img/symbol-defs.svg#icon-menu"></use>
+            </svg>
+            <svg class="icon-close" width="24" height="24" aria-label="Close menu">
+                <use href="../img/symbol-defs.svg#icon-close"></use>
+            </svg>
+        </button>
+    </div>
+</section>
+
+  <main>
+    <section class="hero" >
   <div class="container-hero">
     <h1 class="hero-title">Ласкаво просимо до Солодкої Майстерні</h1>
     <p class="hero-text">Відкрийте для себе наші неперевершені десерти, приготовані з любов'ю та увагою до деталей. Кожен шматочок — це справжнє свято смаку!</p>
     <a class="btn-hero button-primary" href="#review">Що про нас думають</a>
   </div>
 </section>
-      product
-      about-us
+    product
+    about-us
 <!-- https://swiperjs.com/demos -->
-      <section class="feedback-section" id="reviews">
+    <section class="feedback-section" id="reviews">
   <div class="container">
     <h2 class="feedback-title">Відгуки клієнтів</h2>
     <p class="feedback-subtitle">
@@ -53,7 +75,7 @@
   </div>
 </section>
 
-      <section class="faq-section" id="faq">
+    <section class="faq-section" id="faq">
     <div class="container faq-container">
         <div class="faq-content">
             <h2 class="faq-title">Часті питання</h2>
@@ -225,7 +247,7 @@
         </div>
     </div>
 </section>
-      <div class="backdrop">
+    <div class="backdrop">
     <div class="modal-contact-form" >
       <form class="contact-form">
          <div class="container-contact-form">
@@ -266,9 +288,9 @@
     </div>
 </div>
 
-    </main>
+  </main>
 
-    <footer id="footer" class="footer">
+  <footer id="footer" class="footer">
   <div class="footer-container">
     <div class="footer-inner">
       <a href="index.html" class="footer-logo" aria-label="Home">
@@ -345,6 +367,7 @@
 </footer>
 
 
-    navbar
-  </body>
+  navbar
+</body>
+
 </html>
