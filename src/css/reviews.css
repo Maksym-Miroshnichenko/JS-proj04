@@ -54,19 +54,19 @@
 
 .js-raty-stars i {
     font-style: normal;
-    font-size: 30px;
+    font-size: 20px;
     font-family: Arial, sans-serif;
     line-height: 1;
 }
 
 .js-raty-stars .star-on-png::before {
     content: '★';
-    color: #111111;
+    fill: #080c0c;
 }
 
 .js-raty-stars .star-off-png::before {
     content: '★';
-    color: #e0e0e0;
+    fill: #080c0c;
 }
 
 .js-raty-stars .star-half-png::before {
@@ -137,28 +137,16 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.swiper-btn-icon{
+stroke: currentColor;
+}
+
 .swiper-btn:hover{
     background-color: #f19898;
-    color: #080c0c;
 }
 
 .swiper-btn:active{
     background-color:#c07979;
-}
-
-.swiper-btn-prev::after,
-.swiper-btn-next::after {
-    font-size: 15px;
-    font-weight: bold;
-    font-family: sans-serif;
-}
-
-.swiper-btn-prev::after {
-    content: '←';
-}
-
-.swiper-btn-next::after {
-    content: '→';
 }
 
 .swiper-button-disabled {
