@@ -4,44 +4,44 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 import Raty from 'raty-js';
 
 
-document.addEventListener("DOMContentLoaded", () => {
-const container = document.querySelector('.products');
-container.insertAdjacentHTML('beforeend', renderProductCard([productExampl]));
-});
+// document.addEventListener("DOMContentLoaded", () => {
+// const container = document.querySelector('.products');
+// container.insertAdjacentHTML('beforeend', renderProductCard([productExampl]));
+// });
 
-const productExampl =
-  {
-  "_id": "6852a9fcb459460cb6b47720",
-  "name": "Тірамісу Класик",
-  "description": "Багатошаровий італійський десерт з кавовим смаком і ніжним сиром маскарпоне.",
-  "composition": "Маскарпоне, кава, печиво савоярді, яйця, цукор, какао.",
-  "price": 130,
-  "category": {
-    "name": "Італійські десерти"
-  },
-  "rate": 4,
-  "image": "https://ftp.goit.study/img/deserts/6852a9fcb459460cb6b47720.png"
-}
+// const productExampl =
+//   {
+//   "_id": "6852a9fcb459460cb6b47720",
+//   "name": "Тірамісу Класик",
+//   "description": "Багатошаровий італійський десерт з кавовим смаком і ніжним сиром маскарпоне.",
+//   "composition": "Маскарпоне, кава, печиво савоярді, яйця, цукор, какао.",
+//   "price": 130,
+//   "category": {
+//     "name": "Італійські десерти"
+//   },
+//   "rate": 4,
+//   "image": "https://ftp.goit.study/img/deserts/6852a9fcb459460cb6b47720.png"
+// }
 
-async function getDessertById(id) {
-  const response = await fetch(`https://deserts-store.b.goit.study/api/desserts/${id}`);
-  if (!response.ok) throw new Error("Помилка API");
-  return await response.json();
-}
+// async function getDessertById(id) {
+//   const response = await fetch(`https://deserts-store.b.goit.study/api/desserts/${id}`);
+//   if (!response.ok) throw new Error("Помилка API");
+//   return await response.json();
+// }
 
 
-function renderProductCard(arr) {
-  return arr.map(product => `
-    <li class="product-card">
-      <a href="#" class="dessert-link" data-id="${product._id}">
-        <img src="${product.image}" alt="${product.name}">
-        <h3>${product.name}</h3>
-        <p>${product.description}</p>
-        <p><strong>Ціна:</strong> ${product.price} грн</p>
-      </a>
-    </li>
-  `).join('');
-}
+// function renderProductCard(arr) {
+//   return arr.map(product => `
+//     <li class="product-card">
+//       <a href="#" class="dessert-link" data-id="${product._id}">
+//         <img src="${product.image}" alt="${product.name}">
+//         <h3>${product.name}</h3>
+//         <p>${product.description}</p>
+//         <p><strong>Ціна:</strong> ${product.price} грн</p>
+//       </a>
+//     </li>
+//   `).join('');
+// }
 
 
 async function openDessertModal(id) {
