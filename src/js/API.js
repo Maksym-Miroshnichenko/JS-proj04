@@ -37,33 +37,39 @@ export async function api(pageGiven, categoryId) {
 //loader function (with css)
 //2 api +1: api categories list, api deserts 8 elements, api  filtered deserts
 //pagination load more
-// const coverOfSelect = document.querySelector('div.coverOfSelect');
-// export async function addListenersToButton() {
-//   coverOfSelect.addEventListener('click', e => {
-// if (
-//     e.target.classList.contains('dropdown__item') ||
-//     e.target.classList.contains('button-secondary spl-list-button')
-//   ) {
-//     try {
-//       showLoader();
-//       hideLoadMoreButton();
-//       changePageQuantityNumber(pageQuantity + 1);
-//       if (pageQuantity > Math.ceil(data.totalItems / perPageVariable)) {
-//         alert('It is last page');
-//       } else {
-//           api(pageQuantity, e.target.dataset.id);
-//             changePageQuantityNumber(pageQuantity + 1);
-//         createGallery(data.deserts);
-//         hideLoader();
-//     } catch (error) {
-//       alert(error);
-//     } finally {
-//       hideLoader();
-//     }
-//   }
-//   return;
-//   });
-// }
+
+export async function addListenerToLoadMore() {
+  const coverOfSelect = document.querySelector('div.coverOfSelect');
+  coverOfSelect.addEventListener('click', async e => {
+    if (
+      e.target.classList.contains('dropdown__item') ||
+      e.target.classList.contains('button-secondary spl-list-button')
+    ) {
+      try {
+        showLoader();
+        hideLoadMoreButton();
+
+        const categoryId = e.target.dataset.id;
+        if (!categoryId) {
+          console.error('No category ID found on target element:', e.target);
+          return;
+        }
+
+        const data = await api(pageQuantity, categoryId);
+        if (pageQuantity > Math.ceil(data.totalItems / perPageVariable)) {
+          alert('It is last page');
+        } else {
+          createGallery(data.deserts);
+          changePageQuantityNumber(pageQuantity + 1);
+        }
+      } catch (error) {
+        alert(error);
+      } finally {
+        hideLoader();
+      }
+    }
+  });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const coverOfSelect = document.querySelector('div.coverOfSelect');

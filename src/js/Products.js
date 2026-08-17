@@ -66,22 +66,52 @@ const toggle = dropdown.querySelector('.dropdown__toggle');
 const label = dropdown.querySelector('.dropdown__label');
 const items = dropdown.querySelectorAll('.dropdown__item'); // открыть/закрыть по клику на кнопку
 
-toggle.addEventListener('click', () => {
-  dropdown.classList.toggle('open');
-});
-
-items.forEach(item => {
-  item.addEventListener('click', () => {
-    label.textContent = item.textContent;
-    dropdown.classList.remove('open');
+export function doListenersForStart() {
+  toggle.addEventListener('click', () => {
+    dropdown.classList.toggle('open');
   });
-});
 
-document.addEventListener('click', e => {
-  if (!dropdown.contains(e.target)) {
-    dropdown.classList.remove('open');
-  }
-});
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      label.textContent = item.textContent;
+      dropdown.classList.remove('open');
+    });
+  });
+
+  document.addEventListener('click', e => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+    }
+  });
+  const loadMore = document.querySelector('.spl-button-load-more');
+  loadMore.addEventListener('click', event => {
+    async function getMoreImgByButton() {
+      // hideLoadMoreButton();
+      //перевірка за останніми результатами попереднього запиту.
+      // changePerPageQuantity(pageQuantity + 1);
+      try {
+        showLoader();
+        hideLoadMoreButton();
+        changePageQuantityNumber(pageQuantity + 1);
+        const info = await api(pageQuantity, event.target.dataset.id || false);
+        if (pageQuantity > Math.ceil(info.totalHits / perPageVariable)) {
+          alert('It is last page');
+        } else {
+          createGallery(info);
+          if (pageQuantity > 1) {
+            showLoadMoreButton();
+          }
+          hideLoader();
+        }
+      } catch (error) {
+        alert(error);
+      } finally {
+        hideLoader();
+      }
+    }
+    getMoreImgByButton();
+  });
+}
 //
 
 // sensivity with click on button to send api filtered deserts
@@ -93,24 +123,28 @@ const coverOfSelect = document.querySelector('div.coverOfSelect');
 const buttonsDiv = document.querySelector('.coverOfInputs');
 const select = document.querySelector('.dropdown__list');
 export async function getAndRenderButtons() {
-  let selectLi = [`<li class="dropdown__item">Усі десерти</li>`];
-  let buttonsArr = [
-    `<button class="button-secondary spl-list-button">Усі десерти</button>`,
-  ];
-  const infoCategories = await axios({
-    method: 'GET',
-    url: 'https://deserts-store.b.goit.study/api/categories',
-  });
-  infoCategories.data.map(({ _id, name }) => {
-    selectLi.push(`<li data-id='${_id}' class="dropdown__item">${name}</li>`);
-    buttonsArr.push(
-      `<button data-id='${_id}' class="button-secondary spl-list-button" name="${name}">${name}</button>`
-    );
-  }); // array -> elem-> obj li/obj button
-  buttonsDiv.insertAdjacentHTML('beforeend', buttonsArr.join(''));
-  select.insertAdjacentHTML('beforeend', selectLi.join(''));
+  try {
+    let selectLi = [`<li class="dropdown__item">Усі десерти</li>`];
+    let buttonsArr = [
+      `<button class="button-secondary spl-list-button">Усі десерти</button>`,
+    ];
+    const infoCategories = await axios({
+      method: 'GET',
+      url: 'https://deserts-store.b.goit.study/api/categories',
+    });
+    infoCategories.data.map(({ _id, name }) => {
+      selectLi.push(`<li data-id='${_id}' class="dropdown__item">${name}</li>`);
+      buttonsArr.push(
+        `<button data-id='${_id}' class="button-secondary spl-list-button" name="${name}">${name}</button>`
+      );
+    }); // array -> elem-> obj li/obj button
+    buttonsDiv.insertAdjacentHTML('beforeend', buttonsArr.join(''));
+    select.insertAdjacentHTML('beforeend', selectLi.join(''));
 
-  //addEvListener
+    //addEvListener
+  } catch (error) {
+    alert(error);
+  }
 }
 
 export function showLoader() {
@@ -194,32 +228,3 @@ export function hideLoadMoreButton() {
     buttonLoadMore.classList.remove('showLoadMoreButton');
   }
 }
-
-const loadMore = document.querySelector('.spl-button-load-more');
-loadMore.addEventListener('click', event => {
-  async function getMoreImgByButton() {
-    // hideLoadMoreButton();
-    //перевірка за останніми результатами попереднього запиту.
-    // changePerPageQuantity(pageQuantity + 1);
-    try {
-      showLoader();
-      hideLoadMoreButton();
-      changePageQuantityNumber(pageQuantity + 1);
-      const info = await api(pageQuantity, event.target.dataset.id || false);
-      if (pageQuantity > Math.ceil(info.totalHits / perPageVariable)) {
-        alert('It is last page');
-      } else {
-        createGallery(info);
-        if (pageQuantity > 1) {
-          showLoadMoreButton();
-        }
-        hideLoader();
-      }
-    } catch (error) {
-      alert(error);
-    } finally {
-      hideLoader();
-    }
-  }
-  getMoreImgByButton();
-});
