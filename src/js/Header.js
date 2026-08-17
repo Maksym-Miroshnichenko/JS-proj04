@@ -20,16 +20,33 @@
 });*/
 
 const logoLink = document.querySelector('#logo-link');
-
-logoLink.addEventListener('click', () => {
-    /*event.preventDefault();*/
-    navMenuLinks.forEach(item => item.classList.remove('current'));
-    closeNavbar();
-});
-
-/*link click scroll*/
 const navMenuLinks = document.querySelectorAll(".js-menu-set");
-navMenuLinks.forEach(item => item.classList.remove("current"));
+const burgerBtn = document.querySelector(".menu-burger-btn");
+const headerNav = document.querySelector(".header-nav");
+
+
+function removeCurrentLink() {
+    navMenuLinks.forEach(item => {
+        item.classList.remove("current");
+    });
+
+    if (document.activeElement) {
+        document.activeElement.blur();
+    }
+}
+
+if (logoLink) {
+    logoLink.addEventListener('click', (event) => {
+        /*event.preventDefault();*/
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+
+        closeNavbar();
+    });
+};
 
 navMenuLinks.forEach(link => {
     link.addEventListener("click", (event) => {
@@ -46,8 +63,9 @@ navMenuLinks.forEach(link => {
         }
 
         event.preventDefault();
-
-        navMenuLinks.forEach(item => item.classList.remove("current"));
+        navMenuLinks.forEach(link => {
+            link.classList.remove("current");
+        });
         link.classList.add("current");
 
         targetSection.scrollIntoView({
@@ -59,9 +77,12 @@ navMenuLinks.forEach(link => {
     });
 })
 
-/*burger-menu => navbar*/
-const burgerBtn = document.querySelector(".menu-burger-btn");
-const headerNav = document.querySelector(".header-nav");
+window.addEventListener('scroll', () => {
+    if (window.scrollY <= 10) {
+        removeCurrentLink();
+    }
+});
+
 
 burgerBtn.addEventListener("click", () => {
     if (headerNav.classList.contains("is-open")) {
@@ -111,7 +132,5 @@ button.addEventListener("click", (event) => {
             behavior: "smooth",
             block: "start"
         });
-
-        navMenuLinks.forEach(item => item.classList.remove("current"));
     }
 });
