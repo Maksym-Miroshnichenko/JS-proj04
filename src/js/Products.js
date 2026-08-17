@@ -65,6 +65,7 @@ const dropdown = document.querySelector('.dropdown');
 const toggle = dropdown.querySelector('.dropdown__toggle');
 const label = dropdown.querySelector('.dropdown__label');
 const items = dropdown.querySelectorAll('.dropdown__item'); // открыть/закрыть по клику на кнопку
+const loadMore = document.querySelector('.spl-button-load-more');
 
 export function doListenersForStart() {
   toggle.addEventListener('click', () => {
@@ -83,34 +84,32 @@ export function doListenersForStart() {
       dropdown.classList.remove('open');
     }
   });
-  const loadMore = document.querySelector('.spl-button-load-more');
-  loadMore.addEventListener('click', event => {
-    async function getMoreImgByButton() {
-      // hideLoadMoreButton();
-      //перевірка за останніми результатами попереднього запиту.
-      // changePerPageQuantity(pageQuantity + 1);
-      try {
-        showLoader();
-        hideLoadMoreButton();
-        changePageQuantityNumber(pageQuantity + 1);
-        const info = await api(pageQuantity, event.target.dataset.id || false);
-        if (pageQuantity > Math.ceil(info.totalHits / perPageVariable)) {
-          alert('It is last page');
-        } else {
-          createGallery(info);
-          if (pageQuantity > 1) {
-            showLoadMoreButton();
-          }
-          hideLoader();
-        }
-      } catch (error) {
-        alert(error);
-      } finally {
-        hideLoader();
+  loadMore.addEventListener('click', getMoreImgByButton());
+}
+
+async function getMoreImgByButton() {
+  // hideLoadMoreButton();
+  //перевірка за останніми результатами попереднього запиту.
+  // changePerPageQuantity(pageQuantity + 1);
+  try {
+    showLoader();
+    hideLoadMoreButton();
+    changePageQuantityNumber(pageQuantity + 1);
+    const info = await api(pageQuantity, event.target.dataset.id || false);
+    if (pageQuantity > Math.ceil(info.totalHits / perPageVariable)) {
+      alert('It is last page');
+    } else {
+      createGallery(info);
+      if (pageQuantity > 1) {
+        showLoadMoreButton();
       }
+      hideLoader();
     }
-    getMoreImgByButton();
-  });
+  } catch (error) {
+    alert(error);
+  } finally {
+    hideLoader();
+  }
 }
 //
 
@@ -228,3 +227,45 @@ export function hideLoadMoreButton() {
     buttonLoadMore.classList.remove('showLoadMoreButton');
   }
 }
+
+// код щоб вставити у мейн
+// import {
+//   createGallery,
+//   doListenersForStart,
+//   showLoadMoreButton,
+// } from './js/Products.js';
+// import {} from './js/Product-Modal.js';
+// import {} from './js/Contact-Modal.js';
+// import {} from './js/About-Us.js';
+// import {} from './js/Customer-Reviews.js';
+// import './js/FAQ.js';
+// import {} from './js/Navbar.js';
+// import { initContactForm } from './js/Contact-Modal.js';
+// import { getAndRenderButtons } from './js/Products.js';
+// import {
+//   addListenerToButtons,
+//   api,
+//   changePageQuantityNumber,
+//   pageQuantity,
+// } from './js/API.js';
+// initContactForm();
+
+// async function startElementsSectionsDesserts() {
+//   getAndRenderButtons();
+//   doListenersForStart();
+//   addListenerToButtons();
+
+//   changePageQuantityNumber(1);
+//   //   addListenersToButton();
+//   api(pageQuantity)
+//     .then(data => {
+//       createGallery(data);
+//       showLoadMoreButton();
+//     })
+//     .catch(error => {
+//       alert(error);
+//     });
+// }
+
+// startElementsSectionsDesserts();
+// //loader

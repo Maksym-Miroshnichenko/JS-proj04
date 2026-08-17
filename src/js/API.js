@@ -38,7 +38,7 @@ export async function api(pageGiven, categoryId) {
 //2 api +1: api categories list, api deserts 8 elements, api  filtered deserts
 //pagination load more
 
-export async function addListenerToLoadMore() {
+export async function addListenerToButtons() {
   const coverOfSelect = document.querySelector('div.coverOfSelect');
   coverOfSelect.addEventListener('click', async e => {
     if (
