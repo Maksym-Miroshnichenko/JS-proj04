@@ -33,22 +33,34 @@ async function openDessertModal(id) {
       </div>
     `);
 
-
-
-
     instance.show();
     document.body.classList.add('modal-open');
+instance.element().addEventListener('click', e => {
+  if (e.target === instance.element()) {
+    instance.close();
+    document.body.classList.remove('modal-open');
+  }
+});
+
+
+
+
+
+    
 
     const closeBtn = document.querySelector('.modal--close');
     const openEnotherModal = document.querySelector('.modal--open');
     const backdrop = document.querySelector(".backdrop");
 
+    
     closeBtn.addEventListener('click', () => {
       instance.close();
+      document.body.classList.remove("modal-open");
     });
     document.addEventListener("keydown", (event) =>{
   if(event.key === "Escape"){
     instance.close();
+    document.body.classList.remove("modal-open");
   }
 })
     openEnotherModal.addEventListener("click", () => {
