@@ -1,47 +1,35 @@
 
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
-import Raty from 'raty-js';
+// import Raty from 'raty-js';
 
 
-// document.addEventListener("DOMContentLoaded", () => {
-// const container = document.querySelector('.products');
-// container.insertAdjacentHTML('beforeend', renderProductCard([productExampl]));
-// });
 
-// const productExampl =
-//   {
-//   "_id": "6852a9fcb459460cb6b47720",
-//   "name": "Тірамісу Класик",
-//   "description": "Багатошаровий італійський десерт з кавовим смаком і ніжним сиром маскарпоне.",
-//   "composition": "Маскарпоне, кава, печиво савоярді, яйця, цукор, какао.",
-//   "price": 130,
-//   "category": {
-//     "name": "Італійські десерти"
-//   },
-//   "rate": 4,
-//   "image": "https://ftp.goit.study/img/deserts/6852a9fcb459460cb6b47720.png"
-// }
+document.addEventListener("DOMContentLoaded", () => {
+const container = document.querySelector('.products');
 
-// async function getDessertById(id) {
-//   const response = await fetch(`https://deserts-store.b.goit.study/api/desserts/${id}`);
-//   if (!response.ok) throw new Error("Помилка API");
-//   return await response.json();
-// }
+});
 
 
-// function renderProductCard(arr) {
-//   return arr.map(product => `
-//     <li class="product-card">
-//       <a href="#" class="dessert-link" data-id="${product._id}">
-//         <img src="${product.image}" alt="${product.name}">
-//         <h3>${product.name}</h3>
-//         <p>${product.description}</p>
-//         <p><strong>Ціна:</strong> ${product.price} грн</p>
-//       </a>
-//     </li>
-//   `).join('');
-// }
+async function getDessertById(id) {
+  const response = await fetch(`https://deserts-store.b.goit.study/api/desserts/${id}`);
+  if (!response.ok) throw new Error("Помилка API");
+  return await response.json();
+}
+
+
+function renderProductCard(arr) {
+  return arr.map(product => `
+    <li class="product-card">
+      <a href="#" class="dessert-link" data-id="${product._id}">
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+        <p><strong>Ціна:</strong> ${product.price} грн</p>
+      </a>
+    </li>
+  `).join('');
+}
 
 
 async function openDessertModal(id) {
@@ -79,19 +67,33 @@ async function openDessertModal(id) {
     const button = document.querySelector('.button-primery');
     const closeBtn = document.querySelector('.modal-close');
 
+// const starContainers = container.querySelectorAll('.js-raty-stars');
+
+// starContainers.forEach(el => {
+//   const ratingScore = parseFloat(el.getAttribute('data-rate'));
+
+//   const ratyInstance = new Raty(el, {
+//     score: ratingScore,
+//     readOnly: true,
+//     half: true,
+//     starType: 'i',
+//   });
+
+//   ratyInstance.init();
+// });
 
 
-    const ratyInstance = new Raty(ratingContainer, {
-    score: dessert.rate,
-    readOnly: true,
-    half: true,
-    starType: 'i',
-    starOn: 'fa-solid fa-star',
-    starOff: 'fa-regular fa-star',
-    starHalf: 'fa-solid fa-star-half-stroke'
-});
+//     const ratyInstance = new Raty(ratingContainer, {
+//     score: dessert.rate,
+//     readOnly: true,
+//     half: true,
+//     starType: 'i',
+//     starOn: 'fa-solid fa-star',
+//     starOff: 'fa-regular fa-star',
+//     starHalf: 'fa-solid fa-star-half-stroke'
+// });
 
-  ratyInstance.init();
+//   ratyInstance.init();
     
     if (button) {
       button.addEventListener('click', () => {
@@ -120,4 +122,5 @@ document.addEventListener('click', e => {
   const id = link.dataset.id;
   openDessertModal(id);
 });
+
 

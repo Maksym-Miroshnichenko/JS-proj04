@@ -1,6 +1,5 @@
 .basicLightbox__overlay {
     background: rgba(0, 0, 0, 0.25);
-    animation: overlayFade 0.3s ease forwards;
    
 }
 body.modal-open {
@@ -8,16 +7,13 @@ body.modal-open {
 }
 .modal-close {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.8);
+    top: 16px;
+    right: 16px;
+    background: #f5fdfd;
     border: none;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1;
-    padding: 6px 10px;
-    border-radius: 50%;
     cursor: pointer;
-    transition: background 0.2s ease;
 }
 
 .modal-close:hover {
@@ -28,14 +24,12 @@ body.modal-open {
     position: relative;
     display: flex;
     align-items: flex-start;
-    background: #fff;
+    background: #f5fdfd;
     padding: 64px;
     border-radius: 16px;
     max-width: 1312px;
-    margin: 32px auto;
     max-height: calc(100vh - 64px);
     overflow-y: auto;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     scroll-behavior: smooth;
 }
 .caption-img {
@@ -79,6 +73,13 @@ margin-top: 60px;
     font-weight: 700;
 }
 
+.desert-composition {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: "Work Sans", sans-serif;
+    margin-top: 24px;
+}
 
 .button-primery {
     display: block;
@@ -89,21 +90,45 @@ margin-top: 60px;
     font-family: "Work Sans", sans-serif;
     border: none;
     border-radius: 100px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     margin-top: 32px;
-    transition: background 0.2s ease;
 }
 
-.desert-composition {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.5;
-    font-family: "Work Sans", sans-serif;
-    margin-top: 24px;
+
+
+.js-raty-stars {
+    margin-bottom: 24px;
+    display: flex;
 }
-#dessert-rating {
+    
+.js-raty-stars i {
+    font-style: normal;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1;
+}
+    
+.js-raty-stars .star-on-png::before {
+    content: '★';
+    fill: #080c0c;
+}
+    
+.js-raty-stars .star-off-png::before {
+    content: '★';
+    fill: #080c0c;
+}
+    
+.js-raty-stars .star-half-png::before {
+    content: '★';
+    background: linear-gradient(90deg, #111111 50%, #e0e0e0 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* #dessert-rating {
     margin-bottom: 24px;
 }
 .raty-star-on::before {
@@ -121,7 +146,7 @@ margin-top: 60px;
 .raty-star-half::before {
     content: "★";
     opacity: 0.5;
-}
+} */
 
 
 @media (max-width: 767px) {
@@ -129,75 +154,41 @@ margin-top: 60px;
     .caption-card {
     flex-direction: column;
     padding-inline: 32px;
-    padding-top: 64px;
     max-width: 704px;
     overflow-y: auto;
     overflow-x: hidden;
     align-items: flex-start;
     }
 
-    .modal-close {
-        top: 16px;
-        right: 16px;
-    }
     .caption-img {
-        width: 100%;
-        height: auto;
-        border-radius: 16px;
-        object-fit: cover;
         margin-bottom: 24px;
     }
 
+
     .caption-info {
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
         text-align: left;
         margin: 0;
         width: 100%;
     }
+
+    .name-desert {
+        font-size: 32px;
+    }
+        .price {
+            font-size: 20px;
+        }
     }
 @media (max-width: 375px) {
         .caption-card { 
-        display: flex;
-        flex-direction: column;
         width: 100%;
         max-width: 335px;
-        max-height: calc(100vh - 32px);
+        max-height: 711px;
+         margin-bottom: 64px;
         overflow-y: auto;
         overflow-x: hidden;
-        border-radius: 16px;
-        scroll-behavior: smooth;
         }
-    
-    .caption-img {
-        width: 100%;
-        height: auto;
-        border-radius: 14px;
-        object-fit: cover;
-    }
-    
-         
-    .caption-info {
-        display: flex;
-         flex-direction: column;
-        text-align: left;
-               
-    }
-    
-    .caption-info  {
-        font-size: 22px;
-        line-height: 1.2;
-    }
-    
-    .price {
-    font-size: 18px;
-    }
-    
-         
-    .caption-info {
-        font-size: 15px;
-        line-height: 1.3;
-    }
-              
+        
+   .button-primery {
+    width: 295px;
+   }              
 }
