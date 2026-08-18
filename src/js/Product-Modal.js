@@ -19,7 +19,7 @@ async function openDessertModal(id) {
 
     const instance = basicLightbox.create(`
       <div class="caption-card">
-        <button class="modal-close" aria-label="Закрити">✕</button>
+        <button class="modal--close" aria-label="Закрити">✕</button>
         <img src="${dessert.image}" class="caption-img" alt="${dessert.name}" />
 
         <div class="caption-info">
@@ -28,29 +28,41 @@ async function openDessertModal(id) {
           <div id="dessert-rating"></div>
           <p class="card-description">${dessert.description}</p>
           <p class="desert-composition"><strong class="word">Склад:</strong> ${dessert.composition}</p>
-          <button class="button-primery modal-open open-modal-btn" type="button">Перейти до замовлення</button>
+          <button class="button-primery modal--open open-modal-btn" type="button">Перейти до замовлення</button>
         </div>
       </div>
     `);
 
+    const openEnotherModal = document.querySelector(".modal--open")
+    const backdrop = document.querySelector(".backdrop")
+
+
+
     instance.show();
     document.body.classList.add('modal-open');
 
-    const closeBtn = document.querySelector('.modal-close');
-    const orderBtn = document.querySelector('.button-primery');
+    const closeBtn = document.querySelector('.modal--close');
+    // const orderBtn = document.querySelector('.button-primery');
+    const orderBtn = document.querySelector('.modal--open');
 
     if (closeBtn) {
       closeBtn.addEventListener('click', () => {
         instance.close();
-        document.body.classList.remove('modal-open');
+        // document.body.classList.remove('modal-open');
       });
+      openEnotherModal.addEventListener("click", () => {
+        instance.close();
+        backdrop.classList.add("is-open")
+        // console.log(document);
+      }) 
     }
 
     if (orderBtn) {
-      orderBtn.addEventListener('click', () => {
-        instance.close();
-        document.body.classList.remove('modal-open');
-      });
+      // orderBtn.addEventListener('click', () => {
+      //   instance.close();
+      //   document.body.classList.remove('modal--open');
+      // });
+     
     }
   } catch (error) {
     console.error('Не вдалося відкрити модалку десерту:', error);
@@ -71,3 +83,4 @@ document.addEventListener('click', e => {
 });
 
 initContactForm()
+

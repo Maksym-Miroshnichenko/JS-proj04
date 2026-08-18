@@ -108,16 +108,17 @@ document.addEventListener("keydown", (event) =>{
   }
 })
 
-const openBtn = document.querySelector(".open-modal-btn");
-const backdrop = document.querySelector(".backdrop")
+// const openBtn = document.querySelector(".open-modal-btn");
 
-openBtn.addEventListener("click", () => {
-  backdrop.classList.add("is-open");
-  document.body.classList.add("modal-open");
-});
+
+// openBtn.addEventListener("click", async () => {
+//   await const backdrop = document.querySelector(".backdrop")
+//   backdrop.classList.add("is-open");
+//   document.body.classList.add("modal-open");
+// });
 
 function closeModal(){
   backdrop.classList.remove("is-open")
-  document.body.classList.remove("modal-open");
+  document.body.classList.remove("modal--open");
 }
 }
