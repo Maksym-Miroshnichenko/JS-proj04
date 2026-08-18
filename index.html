@@ -12,9 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400..600;1,400..600&display=swap"
     rel="stylesheet" />
   <script type="module" crossorigin src="/JS-proj04/index.js"></script>
-  <link rel="modulepreload" crossorigin href="/JS-proj04/assets/vendor-C_7b2hil.js">
-  <link rel="stylesheet" crossorigin href="/JS-proj04/assets/vendor-B6MSKusw.css">
-  <link rel="stylesheet" crossorigin href="/JS-proj04/assets/index-BTvlm4AH.css">
+  <link rel="modulepreload" crossorigin href="/JS-proj04/assets/vendor-C1RtILQr.js">
+  <link rel="stylesheet" crossorigin href="/JS-proj04/assets/vendor-DY3MQzJv.css">
+  <link rel="stylesheet" crossorigin href="/JS-proj04/assets/index-DWh2i9d4.css">
 </head>
 
 <body>
@@ -53,7 +53,18 @@
     <a class="btn-hero button-primary" href="#review">Що про нас думають</a>
   </div>
 </section>
-    product
+    <section class="product" id="product">
+  <div class="container">
+    <h2 class="product-h">Солодощі</h2>
+    <p class="product-p">Спробуйте наші смачні десерти, які вас здивують!</p>
+    <div class="product-sort">
+      <div class="coverOfInputs"></div>
+      <select id="categorySelect"></select>
+    </div>
+    <ul class="product-Items"></ul>
+    <button class="load-more-btn">Завантажити ще</button>
+  </div>
+</section>
     <section class="about-section" id="about-us">
     <div class = "container">
     <div class="about-container">
@@ -121,8 +132,24 @@
     <div class="controls-wrapper">
       <div class="swiper-pagination feedback-pagination"></div>
       <div class="nav-buttons">
-        <button class="swiper-btn swiper-btn-prev" aria-label="Назад"></button>
-        <button class="swiper-btn swiper-btn-next" aria-label="Вперед"></button>
+        <button
+          type="button"
+          class="swiper-btn swiper-btn-prev"
+          aria-label="Назад"
+        >
+          <svg class="swiper-btn-icon" width="24" height="24">
+            <use href="/JS-proj04/assets/symbol-defs-B_TgRvN-.svg#icon-arrow_back"></use>
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="swiper-btn swiper-btn-next"
+          aria-label="Вперед"
+        >
+          <svg class="swiper-btn-icon" width="24" height="24">
+            <use href="/JS-proj04/assets/symbol-defs-B_TgRvN-.svg#icon-arrow_forward"></use>
+          </svg>
+        </button>
       </div>
     </div>
   </div>
@@ -341,6 +368,11 @@
     </div>
 </div>
 
+    <div class="desserts-gallery">
+<div class="products">
+</div> 
+</div> 
+
   </main>
 
   <footer id="footer" class="footer">
@@ -420,7 +452,7 @@
 </footer>
 
 
-  navbar
+  <!-- navbar -->
 </body>
 
 </html>
