@@ -1,16 +1,15 @@
-.caption-card{
+.caption-card {
   position: relative;
   border-radius: 16px;
   padding: 64px 20px;
-  /* width: 335px;
-  height: 711px; */
-  background: var(--color-scheme-1-background);
+  margin: 64px 20px;
+  background-color: #f5fdfd;
 }
 
-.modal-close{
+.modal--close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 16px;
+  right: 16px;
   background: none;
   border: none;
   padding: 0;
@@ -22,46 +21,115 @@
   line-height: 1;
 }
 
-.caption-img{
-  width: 295px;
-  height: 221px;
+.caption-img {
+  border-radius: 16px;
+  margin-bottom: 24px;
+
+  fill: #fff;
+  stroke-width: 1px;
+  stroke: #080c0c;
 }
 
-.caption-info{
-  width: 295px;
-  height: 338px;
-}
-
-.name-desert{
-  font-family: var(--font-family);
+.name-desert {
+  font-family: 'Comfortaa', sans-serif;
   font-weight: 700;
   font-size: 32px;
-  line-height: 120%;
+  line-height: 1.2;
   letter-spacing: -0.01em;
-  color: var(--color-scheme-1-text);
+  color: #080c0c;
+
+  margin-bottom: 8px;
 }
 
-.price{
-  font-family: var(--font-family);
+.price {
+  font-family: 'Comfortaa', sans-serif;
   font-weight: 700;
   font-size: 20px;
-  line-height: 140%;
+  line-height: 1.4;
   letter-spacing: -0.01em;
-  color: var(--color-scheme-1-text);
+  color: #080c0c;
+
+  margin-bottom: 24px;
 }
 
-.dessert-rating{
+.card-description {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #080c0c;
 
+  margin-bottom: 24px;
 }
 
-.card-description{
-
+.desert-composition {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #080c0c;
 }
 
-.desert-composition{
+.button-primery {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #080c0c;
 
+  border: 1px solid #f19898;
+  border-radius: 100px;
+  padding: 10px 24px;
+  width: 100%;
+  min-width: 240px;
+  max-width: 295px;
+  height: 44px;
+
+  background: #f19898;
+  display: block;
+  margin: 32px auto 0 auto;
 }
 
-.modal-open{
+.product-rating .raty-star-on::before,
+.product-rating .raty-star-off::before,
+.product-rating .raty-star-on {
+  color: #080c0c;
+}
 
+.product-rating .raty-star-off {
+  color: #e0e0e0;
+}
+
+.product-rating .raty-star-half {
+  background: linear-gradient(90deg, #1a1a1a 50%, #e0e0e0 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  .caption-card {
+    margin: 64px 32px;
+    padding: 64px 32px;
+  }
+
+  .button-primery {
+    margin: 32px 0 48px 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .caption-card {
+    display: flex;
+    gap: 24px;
+  }
+
+  .caption-img {
+    width: 580px;
+    height: 435px;
+  }
+
+  .caption-info {
+    margin: auto 0;
+  }
 }
