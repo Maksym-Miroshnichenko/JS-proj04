@@ -4,6 +4,11 @@ const productPlace = document.querySelector(".product-Items");
 const loadMoreBtn = document.querySelector(".load-more-btn");
 let selectedCategory = "";
 let page = 1;
+export let CURRENT_DESSERT_ID = null;
+
+export function setCurrentDessertId(id) {
+  CURRENT_DESSERT_ID = id;
+}
 
 function setLoadMoreState(isVisible) {
   if (!loadMoreBtn) return;
@@ -27,7 +32,7 @@ function createProducts(items) {
         <p class="li-item-p">${description}</p>
         <div class="li-item-by">
           <p class="product-price">${price} грн</p>
-          <a class="dessert-link" data-id="${_id}">
+          <a class="dessert-link button-secondary" data-id="${_id}">
             <svg width="24" height="24">
               <use href="/img/symbol-defs.svg#icon-arrow_outward" width="24" height="24"></use>
             </svg>
@@ -103,3 +108,11 @@ function clearProducts() {
     productPlace.innerHTML = "";
   }
 }
+document.addEventListener("click", e => {
+  const link = e.target.closest(".dessert-link");
+  if (!link) return;
+
+  e.preventDefault();
+  setCurrentDessertId(link.dataset.id);
+});
+
