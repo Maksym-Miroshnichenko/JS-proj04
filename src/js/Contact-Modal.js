@@ -1,6 +1,7 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
+import { CURRENT_DESSERT_ID } from "./Products.js";
 
 const ORDERS_URL ="https://deserts-store.b.goit.study/api/orders"
 const DESSERT_ID = null
@@ -42,7 +43,7 @@ form.addEventListener("submit", async event => {
       const orderData = {
     name: formData.name,
     phone: formData.phone,
-    dessertId: DESSERT_ID,
+    dessertId: CURRENT_DESSERT_ID,
     comment: formData.message,
   };
   console.log(orderData);
@@ -107,8 +108,9 @@ document.addEventListener("keydown", (event) =>{
   }
 })
 
+
 function closeModal(){
   backdrop.classList.remove("is-open")
-  document.body.classList.remove("modal-open");
+  document.body.classList.remove("modal--open");
 }
 }
