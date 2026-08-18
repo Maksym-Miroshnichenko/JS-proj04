@@ -10,7 +10,7 @@ async function renderCategoryButtons() {
   if (!container || !select) return;
 
   let buttonsHTML = `
-  <button class="button-secondary second-btn-class" data-id="">
+  <button class="button-secondary second-btn-class active activeBtn" data-id="">
       Всі десерти
   </button>`;
   let selectHTML = `
@@ -32,14 +32,17 @@ async function renderCategoryButtons() {
 
     container.innerHTML = buttonsHTML;
     select.innerHTML = selectHTML;
+    selectCategory('');
   } catch (error) {
     console.error('Помилка завантаження категорій:', error);
   }
 }
 
 function selectCategory(id) {
-  document.querySelectorAll('button[data-id]').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.id === id);
+  document.querySelectorAll('.second-btn-class').forEach(btn => {
+    const isActive = btn.dataset.id === id;
+    btn.classList.toggle('active', isActive);
+    btn.classList.toggle('activeBtn', isActive);
   });
 
   const select = document.querySelector('#categorySelect');
@@ -63,5 +66,9 @@ if (categorySelect) {
     selectCategory(e.target.value);
   });
 }
+
+const productActiveBtn = document.querySelector('.product-btn.active');
+
+
 
 renderCategoryButtons();
