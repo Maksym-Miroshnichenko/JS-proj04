@@ -1,7 +1,10 @@
-import {} from './js/Products.js';
-import {} from './js/Product-Modal.js';
-import {} from './js/Contact-Modal.js';
-import {} from './js/About-Us.js';
-import {} from './js/Customer-Reviews.js';
+import { } from './js/Products.js';
+import { } from './js/Header.js';
+import { } from './js/Product-Modal.js';
+import { } from './js/Contact-Modal.js';
+import { } from './js/About-Us.js';
+import { } from './js/Customer-Reviews.js';
 import './js/FAQ.js';
-import {} from './js/Navbar.js';
+import { } from './js/Navbar.js';
+import { initContactForm } from "./js/Contact-Modal.js";
+initContactForm();
