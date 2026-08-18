@@ -30,9 +30,8 @@ async function openDessertModal(id) {
           <div id="dessert-rating"></div>
           <p class="card-description">${dessert.description}</p>
           <p class="desert-composition"><strong class="word">Склад:</strong> ${dessert.composition}</p>
-           
           <button class="button-primery modal--open open-modal-btn" type="button">Перейти до замовлення</button>
-          </div>
+        </div>
       </div>
     `);
 
