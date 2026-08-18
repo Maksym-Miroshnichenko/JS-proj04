@@ -111,6 +111,6 @@ document.addEventListener("keydown", (event) =>{
 
 function closeModal(){
   backdrop.classList.remove("is-open")
-  document.body.classList.remove("modal--open");
+  document.body.classList.remove("modal-open");
 }
 }
