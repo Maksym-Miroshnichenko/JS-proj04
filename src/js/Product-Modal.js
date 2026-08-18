@@ -33,8 +33,6 @@ async function openDessertModal(id) {
       </div>
     `);
 
-    const openEnotherModal = document.querySelector(".modal--open")
-    const backdrop = document.querySelector(".backdrop")
 
 
 
@@ -42,28 +40,22 @@ async function openDessertModal(id) {
     document.body.classList.add('modal-open');
 
     const closeBtn = document.querySelector('.modal--close');
-    // const orderBtn = document.querySelector('.button-primery');
-    const orderBtn = document.querySelector('.modal--open');
+    const openEnotherModal = document.querySelector('.modal--open');
+    const backdrop = document.querySelector(".backdrop");
 
-    if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        instance.close();
-        // document.body.classList.remove('modal-open');
-      });
-      openEnotherModal.addEventListener("click", () => {
-        instance.close();
-        backdrop.classList.add("is-open")
-        // console.log(document);
-      }) 
-    }
+    closeBtn.addEventListener('click', () => {
+      instance.close();
+    });
+    document.addEventListener("keydown", (event) =>{
+  if(event.key === "Escape"){
+    instance.close();
+  }
+})
+    openEnotherModal.addEventListener("click", () => {
+      instance.close();                
+      backdrop.classList.add("is-open"); 
+    });
 
-    if (orderBtn) {
-      // orderBtn.addEventListener('click', () => {
-      //   instance.close();
-      //   document.body.classList.remove('modal--open');
-      // });
-     
-    }
   } catch (error) {
     console.error('Не вдалося відкрити модалку десерту:', error);
   }
@@ -82,5 +74,5 @@ document.addEventListener('click', e => {
   openDessertModal(id);
 });
 
-initContactForm()
+
 
