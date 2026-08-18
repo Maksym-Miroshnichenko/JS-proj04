@@ -101,7 +101,6 @@ if (loadMoreBtn) {
   loadMoreBtn.addEventListener("click", () => renderProducts(false));
 }
 
-renderProducts(true);
 
 function clearProducts() {
   if (productPlace) {
