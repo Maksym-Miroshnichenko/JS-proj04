@@ -1,4 +1,5 @@
 
+
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 // import Raty from 'raty-js';
@@ -7,8 +8,22 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 
 document.addEventListener("DOMContentLoaded", () => {
 const container = document.querySelector('.products');
-
+container.insertAdjacentHTML('beforeend', renderProductCard([productExampl]));
 });
+
+const productExampl =
+  {
+  "_id": "6852a9fcb459460cb6b47720",
+  "name": "Тірамісу Класик",
+  "description": "Багатошаровий італійський десерт з кавовим смаком і ніжним сиром маскарпоне.",
+  "composition": "Маскарпоне, кава, печиво савоярді, яйця, цукор, какао.",
+  "price": 130,
+  "category": {
+    "name": "Італійські десерти"
+  },
+  "rate": 4,
+  "image": "https://ftp.goit.study/img/deserts/6852a9fcb459460cb6b47720.png"
+}
 
 
 async function getDessertById(id) {
