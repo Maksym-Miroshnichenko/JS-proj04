@@ -55,26 +55,11 @@
 .js-raty-stars i {
     font-style: normal;
     font-size: 20px;
-    font-family: Arial, sans-serif;
     line-height: 1;
 }
 
-.js-raty-stars .star-on-png::before {
-    content: '★';
-    fill: #080c0c;
-}
-
-.js-raty-stars .star-off-png::before {
-    content: '★';
-    fill: #080c0c;
-}
-
-.js-raty-stars .star-half-png::before {
-    content: '★';
-    background: linear-gradient(90deg, #111111 50%, #e0e0e0 50%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+.js-raty-stars .star-off-png {
+    color: var(--color-neutral-lighter);
 }
 
 .feedback-text {
