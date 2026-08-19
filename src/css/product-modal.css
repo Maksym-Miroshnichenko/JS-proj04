@@ -10,6 +10,7 @@
   width: 100%;
 }
 
+
 .caption-card {
   max-height: 90vh;
   overflow-y: auto;
@@ -21,6 +22,9 @@
   padding: 64px 20px;
   margin: 0 auto;
   background-color: #f5fdfd;
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .modal--close {

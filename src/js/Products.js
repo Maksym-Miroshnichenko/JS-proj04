@@ -33,7 +33,7 @@ function createProducts(items) {
         <div class="li-item-by">
           <p class="product-price">${price} грн</p>
           <a class="dessert-link button-secondary" data-id="${_id}">
-            <svg width="24" height="24">
+            <svg class="icon-outward" width="24" height="24">
               <use href="/img/symbol-defs.svg#icon-arrow_outward" width="24" height="24"></use>
             </svg>
           </a>

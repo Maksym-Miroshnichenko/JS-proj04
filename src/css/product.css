@@ -2,6 +2,9 @@
   padding-top: 80px;
   padding-bottom: 80px;
 }
+.icon-outward{
+  fill: #080C0C;
+}
 
 .product-h{
   font-family: var(--second-family);

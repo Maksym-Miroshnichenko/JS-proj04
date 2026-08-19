@@ -46,7 +46,6 @@ form.addEventListener("submit", async event => {
     dessertId: CURRENT_DESSERT_ID,
     comment: formData.message,
   };
-  console.log(orderData);
   try {
     const response = await axios.post(ORDERS_URL, orderData)
     Swal.fire({
