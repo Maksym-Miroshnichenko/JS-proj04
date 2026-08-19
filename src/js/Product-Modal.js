@@ -60,6 +60,7 @@ async function openDessertModal(id) {
     });
     openEnotherModal.addEventListener('click', () => {
       instance.close();
+      document.body.classList.remove('modal-open');
       backdrop.classList.add('is-open');
     });
   } catch (error) {
