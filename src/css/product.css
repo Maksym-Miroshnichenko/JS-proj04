@@ -1,6 +1,6 @@
 .product{
-  margin-top: 80px;
-  margin-bottom: 80px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .product-h{
@@ -147,7 +147,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 
