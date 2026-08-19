@@ -28,7 +28,7 @@ function createProducts(items) {
       <li class="li-item-product">
         <img class="li-item-img" src="${image}" alt="${name}">
         <p class="li-item-category">${category.name}</p>
-        <h4 class="li-item-h">${name}</h4>
+        <h3 class="li-item-h">${name}</h3>
         <p class="li-item-p">${description}</p>
         <div class="li-item-by">
           <p class="product-price">${price} грн</p>
