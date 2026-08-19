@@ -131,6 +131,9 @@ border-radius: 100px;
 padding: 10px 24px;
 background: var(--color-scheme-1-background);
 cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .button-secondary:hover, .button-secondary:focus{
