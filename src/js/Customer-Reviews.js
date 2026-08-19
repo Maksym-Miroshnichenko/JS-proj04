@@ -1,5 +1,6 @@
 
 import Raty from 'raty-js';
+import 'raty-js/src/raty.css';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 const API_URL = 'https://deserts-store.b.goit.study/api/feedbacks?limit=10&page=1';
