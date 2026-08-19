@@ -44,6 +44,9 @@ align-items: center;
     padding: 64px 20px;
     display: flex;
     flex-direction: column;
+    max-height: calc(100vh - 64px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 
@@ -84,6 +87,7 @@ textarea::placeholder {
 }
 
 .modal-input {
+  background: var(--color-scheme-1-background);
     border: 2px solid var(--color-neutral-darkest);
   padding: 8px 12px;
   width: 100%;
@@ -93,7 +97,8 @@ margin-bottom: 24px;
 }
 
 
-.comment-form{
+.comment-form{  
+  min-height: 180px;
     border: 2px solid var(--color-neutral-darkest);
     border-radius: 12px;
     width: 100%;
