@@ -1,4 +1,7 @@
 .caption-card {
+  max-height: 90vh;
+  overflow-y: auto;
+  max-width: 335px;
   position: relative;
   border-radius: 16px;
   padding: 64px 20px;
@@ -109,6 +112,7 @@
 
 @media screen and (min-width: 768px) {
   .caption-card {
+    max-width: 704px;
     margin: 64px 32px;
     padding: 64px 32px;
   }
@@ -120,6 +124,7 @@
 
 @media screen and (min-width: 1440px) {
   .caption-card {
+    max-width: 1312px;
     display: flex;
     gap: 24px;
   }
