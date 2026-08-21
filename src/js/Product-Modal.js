@@ -2,6 +2,7 @@ import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import { setCurrentDessertId } from './Products.js';
 import { initContactForm } from './Contact-Modal.js';
+import Raty from 'raty-js';
 
 async function getDessertById(id) {
   const response = await fetch(
@@ -28,7 +29,7 @@ async function openDessertModal(id) {
           <h2 class="name-desert">${dessert.name}</h2>
           <p class="price">${dessert.price} грн</p>
           <div id="dessert-rating">
-          <div class="js-raty-stars" data-rate="4,5" title="gorgeous" data-read-only="true" style="pointer-events: none;"><i data-alt="1" class="star-on-png" title="gorgeous"></i>&nbsp;<i data-alt="2" class="star-on-png" title="gorgeous"></i>&nbsp;<i data-alt="3" class="star-on-png" title="gorgeous"></i>&nbsp;<i data-alt="4" class="star-on-png" title="gorgeous"></i>&nbsp;<i data-alt="5" class="star-half-png" title="gorgeous"></i><input name="score" type="hidden" value="4.5" readonly=""></div>
+          <div class="js-raty-stars js-raty-modal"></div>
           </div>
           <p class="card-description">${dessert.description}</p>
           <p class="desert-composition"><strong class="word">Склад:</strong> ${dessert.composition}</p>
@@ -38,6 +39,14 @@ async function openDessertModal(id) {
     `);
 
     instance.show();
+    const ratingEl = instance.element().querySelector('.js-raty-modal');
+const raty = new Raty(ratingEl, {
+  score: dessert.rate,
+  readOnly: true,
+  half: true,
+  starType: 'i',
+});
+raty.init(); 
     document.body.classList.add('modal-open');
     instance.element().addEventListener('click', e => {
       if (e.target === instance.element()) {
