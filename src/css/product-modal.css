@@ -110,23 +110,6 @@
   margin: 32px auto 0 auto;
 }
 
-.product-rating .raty-star-on::before,
-.product-rating .raty-star-off::before,
-.product-rating .raty-star-on {
-  color: #080c0c;
-}
-
-.product-rating .raty-star-off {
-  color: #e0e0e0;
-}
-
-.product-rating .raty-star-half {
-  background: linear-gradient(90deg, #1a1a1a 50%, #e0e0e0 50%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 @media screen and (min-width: 768px) {
   .caption-card {
     width: 704px;
